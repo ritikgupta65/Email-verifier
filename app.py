@@ -12,7 +12,6 @@ def check_mx():
     if not email:
         return jsonify({"error": "Email is required"}), 400
 
-    # Basic regex check
     regex = r'^[\w.-]+@[\w.-]+\.\w+$'
     if not re.match(regex, email):
         return jsonify({"valid_format": "False", "mx_exists": "True"})
